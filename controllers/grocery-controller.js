@@ -11,13 +11,13 @@ exports.createGrocery = async (req, res, next) => {
     
         const newGrocery = new Grocery(grocery);
         await newGrocery.save()
-        res.status(200).json(response);
+        res.status(200).json(newGrocery);
 
     } catch (error) {
-        if(!err.statusCode){
-            err.statusCode = 500;
+        if(!error.statusCode){
+          error.statusCode = 500;
         }
-        next(err);
+        next(error);
     }
 }
 

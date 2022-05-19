@@ -4,12 +4,12 @@ const router = express.Router();
 const groceryController = require('../controllers/grocery-controller');
 const isAuth = require('../middlewares/isAuth');
 
-router.get('/getGrocery',  isAuth, groceryController.getGrocery);
+router.get('/',  isAuth, groceryController.getGrocery);
 
-router.put('/createGrocery', isAuth, groceryController.createGrocery);
+router.put('/', isAuth, groceryController.createGrocery);
 
-router.patch('/editGrocery', isAuth, groceryController.editGrocery);
+router.patch('/', isAuth, groceryController.editGrocery);
 
-router.delete('/deleteGrocery', isAuth,  groceryController.deleteGrocery);
+router.delete('/', isAuth,  groceryController.deleteGrocery);
 
 module.exports = router;

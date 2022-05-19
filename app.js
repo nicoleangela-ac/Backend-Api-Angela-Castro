@@ -22,7 +22,7 @@ app.use((req, res, next)=>{
 app.use(authRoutes);
 
 //route used for groceries
-app.use(groceryRoutes);
+app.use('/grocery', groceryRoutes);
 
 app.get('*', (req, res) => {
     res.send("Page not found");
